@@ -20,6 +20,9 @@ class Settings(BaseSettings):
     # Email Settings
     SENDGRID_API_KEY: str
     ALERT_FROM_EMAIL: str = "alerts@torale.com"
+    
+    # Microservices URLs
+    DISCOVERY_SERVICE_URL: Optional[str] = None
 
     # AI Provider API Keys - these should be loaded from .env
     OPENAI_API_KEY: Optional[str] = None
@@ -53,6 +56,10 @@ class Settings(BaseSettings):
 
     # Security Settings
     CORS_ORIGINS: list[str] = ["http://localhost:3000"]
+    
+    # Microservices URLs
+    DISCOVERY_SERVICE_URL: Optional[str] = None  # e.g., "http://discovery-service:8001"
+    NOTIFICATION_SERVICE_URL: Optional[str] = None  # e.g., "http://notification-service:8003"
 
     class Config:
         env_file = ".env"
